@@ -1,5 +1,5 @@
 {% set name = "google-cloud-compute" %}
-{% set version = "1.0.0" %}
+{% set version = "1.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,20 +7,23 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 9c849e69bc1dcdfeb499183df0de5567e6366b2019e02777f99746771aefbc0e
+  sha256: a54a73388218854d424a27313d0092261707cf1ddca1a16deb9f1f94cb75ec87
 
 build:
   noarch: python
   number: 0
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
+# an additional runtime dependency of dataclasses is necessary for Python 3.6,
+# conda-forge stopped building 3.6 so we impose a 3.7 requirement to prevent
+# upgrades of older systems
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python >=3.7
   run:
-    - python >=3.6
-    - google-api-core-grpc >=2.2.0,<3.0.0dev
+    - python >=3.7
+    - google-api-core-grpc >=2.4.0,<3.0.0dev
     - proto-plus >=1.19.7
 
 test:
