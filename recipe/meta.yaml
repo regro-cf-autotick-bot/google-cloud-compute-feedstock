@@ -14,12 +14,15 @@ build:
   number: 0
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
+# an additional runtime dependency of dataclasses is necessary for Python 3.6,
+# conda-forge stopped building 3.6 so we impose a 3.7 requirement to prevent
+# upgrades of older systems
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python >=3.7
   run:
-    - python >=3.6
+    - python >=3.7
     - google-api-core-grpc >=2.4.0,<3.0.0dev
     - proto-plus >=1.19.7
 
