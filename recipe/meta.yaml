@@ -1,5 +1,5 @@
 {% set name = "google-cloud-compute" %}
-{% set version = "1.5.0" %}
+{% set version = "1.5.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 1be91360829440670a898cfb39a01e6cd88444e709f9db11e27d48670971632c
+  sha256: d5cae485c7f9e94e83031f71546d9ef610b1434e0e8d0ab64202ece37e1c0afd
 
 build:
   noarch: python
@@ -24,8 +24,8 @@ requirements:
   run:
     - python >=3.7
     - google-api-core-grpc >=2.8.0,<3.0.0dev
-    - proto-plus >=1.19.7,<2.0.0dev
-    - protobuf >=3.19.0,<4.0.0dev
+    - proto-plus >=1.22.0,<2.0.0dev
+    - protobuf >=3.19.0,<5.0.0dev
 
 test:
   requires:
