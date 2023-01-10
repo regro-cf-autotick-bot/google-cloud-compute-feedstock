@@ -1,5 +1,5 @@
 {% set name = "google-cloud-compute" %}
-{% set version = "1.7.0" %}
+{% set version = "1.8.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 5fc19368091a80671aff389ec75d614e09f2749c9f27835c682a52c75edfc5eb
+  sha256: a67857918497a61eda219268237b574cd214907e384b6d900c8197525f5c7855
 
 build:
   noarch: python
