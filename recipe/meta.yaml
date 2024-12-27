@@ -1,5 +1,5 @@
 {% set name = "google-cloud-compute" %}
-{% set version = "1.20.1" %}
+{% set version = "1.23.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: e626d227bd350f6e4fde737f1a2ba25a0382b7ca067314fc9a5de0ac0cc99801
+  sha256: 2cb02563af528f7460f2c8c905230996873e284fffe69ccfe2e47890f9e5490b
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 # an additional runtime dependency of dataclasses is necessary for Python 3.6,
